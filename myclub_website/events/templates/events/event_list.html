@@ -1,0 +1,14 @@
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+          <th scope="col"> <a href="{% url 'list-events' %}" class="text-white">List of old Quotes</a></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for event in event_list %}
+            <tr>
+                <td align="left">{{ event }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

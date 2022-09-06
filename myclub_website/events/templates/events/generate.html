@@ -1,41 +1,20 @@
 {% extends 'events/base.html' %}
+{% load static %}
 {% block content %}
-    <!-- <div class="section center no-pad-bot" id="index-banner">
-        <h1 class="header center yellow-text text-darken-2">
-            <img src="https://suntzu-quotes.herokuapp.com/img/suntzu-avatar.png" alt="" class="circle responsive-img s2 z-depth-3">
-            <br>
-            Choris quotes
-        </h1>
-        <br>
-        <form method="get" action="#">
-            <div class="row">
-                <div class="col s6 offset-s3">
-                    <div class="input-field">
-                        <label for="quote" class="">Enter the quote</label>
-                        <input autofocus="" name="quote" type="text" class="" value="">
-                    </div>
-                    <button class="btn btn-success" type="submit">
-                        Generate quote
-                        <i class="material-icons right">send</i>
-                    </button>
-                </div>
-            </div>
-        </form>
-    </div> -->    
     <main class="px-3">       
         <h1>
-            <img src="https://suntzu-quotes.herokuapp.com/img/suntzu-avatar.png" alt="" class="circle responsive-img s2 z-depth-3">
-            <br>
             Choris quotes.
+            </br></br>
+            <img src="{%static 'img/choris-logo.png'%}" alt="" class="img-fluid rounded-circle">            
         </h1>
+        </br>
         <form method="get" action="#">
             <div class="row">
                 <div class="col s6 offset-s3">
-                    <div class="lead">
-                        <label for="quote" class="">Enter the quote</label>
-                        <input autofocus="" name="quote" type="text" class="" value="">
+                    <div class="lead">                        
+                        <input autofocus="" name="quote" type="text" class="" value="" placeholder="Enter the quote"
                     </div>
-                    <br/>
+                    </br></br>
                     <button class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="submit">
                         Generate quote
                     </button>
@@ -43,4 +22,6 @@
             </div>
         </form>
     </main>
+    </br>
+    {% include 'events/event_list.html' %}
 {% endblock %}
