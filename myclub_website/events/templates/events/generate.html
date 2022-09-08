@@ -8,19 +8,24 @@
             <img src="{%static 'img/choris-logo.png'%}" alt="" class="img-fluid rounded-circle">            
         </h1>
         </br>
-        <form method="get" action="#">
-            <div class="row">
-                <div class="col s6 offset-s3">
-                    <div class="lead">                        
-                        <input autofocus="" name="quote" type="text" class="" value="" placeholder="Enter the quote"
+        {% if submitted %}
+            Deu certo
+        {% else %}
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col s6 offset-s3">
+                        <div class="lead">                        
+                            {{ form.as_p }}
+                        </div>
+                        </br></br>
+                        <button class="btn btn-lg btn-warning" type="submit">
+                            Generate quote
+                        </button>
                     </div>
-                    </br></br>
-                    <button class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="submit">
-                        Generate quote
-                    </button>
                 </div>
-            </div>
-        </form>
+            </form>
+        {% endif %}
     </main>
     </br>
     {% include 'events/event_list.html' %}
