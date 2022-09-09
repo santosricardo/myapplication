@@ -19,16 +19,14 @@ def generate(request):
             return HttpResponseRedirect('/generate?submitted=True')
     else:
         form = EventForm()
-        if 'submitted' in request.GET and 'submitted' is not NUL:
+        if 'submitted' in request.GET:
             submitted = True
-        else:
-            print('error!!!')
     return render(request, 'events/generate.html', {'form':form, 'submitted':submitted})
 
 def all_quote(request):
-    all_quotes = Event.objects.all()
-    return render(request, 'events/all_quote.html', {'all_quotes':all_quotes})
+    all_quote = Event.objects.all()
+    return render(request, 'events/all_quote.html', {'all_quote':all_quote})
 
-# def add_event(request):
-#     form = EventForm
-#     return render(request, 'events/generate.html', {'form':form})
+def show_quote(request, quote_id):
+    quote = Event.objects.get(pk=quote_id)
+    return render(request, 'events/show_quote.html', {'quote':quote})

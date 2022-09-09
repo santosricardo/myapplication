@@ -3,7 +3,7 @@
 {% block content %}
     <main class="px-3">
         {% if submitted %}
-            Deu certo
+            teste
         {% else %}
             <h1>
                 Choris quotes.
@@ -28,6 +28,6 @@
             </form>
         {% endif %}
         </br>
-        <a href="{% url 'all_quotes' %}" class="text-white">List of old Quotes</a>
+        <a href="{% url 'all_quote' %}" class="text-white">List of old Quotes</a>
     </main>
 {% endblock %}
