@@ -1,16 +1,17 @@
 {% extends 'events/base.html' %}
 {% load static %}
 {% block content %}
-    <main class="px-3">       
-        <h1>
-            Choris quotes.
-            </br></br>
-            <img src="{%static 'img/choris-logo.png'%}" alt="" class="img-fluid rounded-circle">            
-        </h1>
-        </br>
+    <main class="px-3">
         {% if submitted %}
             Deu certo
         {% else %}
+            <h1>
+                Choris quotes.
+                </br></br>
+                <img src="{%static 'img/choris-logo.png'%}" alt="" class="img-fluid rounded-circle">            
+            </h1>
+            </br>
+            </br>
             <form method="POST" action="">
                 {% csrf_token %}
                 <div class="row">
@@ -18,7 +19,7 @@
                         <div class="lead">                        
                             {{ form.as_p }}
                         </div>
-                        </br></br>
+                        </br>
                         <button class="btn btn-lg btn-warning" type="submit">
                             Generate quote
                         </button>
@@ -26,7 +27,7 @@
                 </div>
             </form>
         {% endif %}
+        </br>
+        <a href="{% url 'all_quotes' %}" class="text-white">List of old Quotes</a>
     </main>
-    </br>
-    {% include 'events/event_list.html' %}
 {% endblock %}
