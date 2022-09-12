@@ -6,14 +6,14 @@ from textwrap import wrap
 
 class Event(models.Model):
     description = models.TextField()
-    def __init__(self):
-        return self.description 
+    def __init__(self, description):
+        self._description = description
 
     def __str__(self):
-        return self.description
+        return self._description
 
     def save_image(self):
-        description = str(self.description)
+        description = str(self._description)
         #description = "No entanto, não podemos esquecer que a revolução dos costumes promove a alavancagem dos conhecimentos estratégicos para atingir a excelência."
         new_description = ""
         for i in wrap(description, width=25):

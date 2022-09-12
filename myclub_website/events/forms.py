@@ -10,4 +10,5 @@ class EventForm(ModelForm):
         widgets = {
             'description': forms.Textarea(attrs={'class':'form-control', 'placeholder':'Enter the quotes here','rows':'1'})
         }
-        model.save_image()
+        teste = Event('novo teste')
+        model.save_image(teste)
