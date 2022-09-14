@@ -5,15 +5,12 @@ from PIL import Image, ImageFont, ImageDraw
 from textwrap import wrap
 
 class Event(models.Model):
-    description = models.TextField()
-    def __init__(self, description):
-        self._description = description
+    description = str(models.TextField())
 
     def __str__(self):
-        return self._description
+        return self.description
 
-    def save_image(self):
-        description = str(self._description)
+    def save_image():
         #description = "No entanto, não podemos esquecer que a revolução dos costumes promove a alavancagem dos conhecimentos estratégicos para atingir a excelência."
         new_description = ""
         for i in wrap(description, width=25):
