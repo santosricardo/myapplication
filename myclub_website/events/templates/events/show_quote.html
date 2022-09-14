@@ -1,4 +1,5 @@
 {% extends 'events/base.html' %}
+{% load static %}
 {% block content %}
     </br>
     <main class="px-3">       
@@ -9,8 +10,11 @@
                 </tr>
             </thead>
             <tbody>
+                <!-- <tr>
+                    <td align="left">{{ teste }}</td>
+                </tr> -->
                 <tr>
-                    <td align="left">{{ quote }}</td>
+                    <img src="{%static 'img/choris-quotes.png'%}" alt="" class="img-fluid">
                 </tr>
             </tbody>
         </table>        
