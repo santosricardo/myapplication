@@ -29,4 +29,6 @@ def all_quote(request):
 
 def show_quote(request, quote_id):
     quote = Event.objects.get(pk=quote_id)
+    #description = Event.objects.get['description']
+    Event.save_image(quote)
     return render(request, 'events/show_quote.html', {'quote':quote})
