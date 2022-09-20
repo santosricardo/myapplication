@@ -6,7 +6,7 @@ from PIL import Image, ImageFont, ImageDraw
 from textwrap import wrap
 
 #path = os.listdir("/home/ricardo/projetos/estudos/myapplication/myclub_website/events/static/")
-path = "/home/ricardo/projetos/estudos/myapplication/myclub_website/events/static/"
+path = "/home/ricardo/projetos/myapplication/myclub_website/events/static/"
 class Event(models.Model):
     description = models.TextField()
     # def __init__(self):

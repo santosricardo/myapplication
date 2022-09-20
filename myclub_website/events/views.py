@@ -11,17 +11,14 @@ def about(request):
     return render(request, 'events/about.html', {})
 
 def generate(request):
-    submitted = False
+    form = EventForm(request.POST or None)
     if request.method == "POST":
-        form = EventForm(request.POST)
         if form.is_valid():
+            form.due_back = form.cleaned_data['description']
             form.save()
-            return HttpResponseRedirect('/generate?submitted=True')
-    else:
-        form = EventForm()
-        if 'submitted' in request.GET:
-            submitted = True
-    return render(request, 'events/generate.html', {'form':form, 'submitted':submitted})
+            return HttpResponseRedirect('/generate')
+            #return HttpResponseRedirect('/show_quotes/')
+    return render(request, 'events/generate.html', {'form':form})
 
 def all_quote(request):
     all_quote = Event.objects.all()
